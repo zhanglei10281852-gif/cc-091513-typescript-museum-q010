@@ -1,0 +1,5 @@
+{
+  "risk_levels": ["basic", "supervised", "restricted"],
+  "qualification_states": ["training", "active", "expired", "suspended"],
+  "checkout_events": ["checked_out", "returned", "overdue", "locked"]
+}
