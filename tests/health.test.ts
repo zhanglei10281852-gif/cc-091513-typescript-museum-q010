@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { createApp, healthPayload } from "../src/app.js";
+import { createDefaultApp, healthPayload } from "../src/app.js";
 
 test("健康信息包含服务名称", () => {
   assert.deepEqual(healthPayload(), {
@@ -11,7 +11,7 @@ test("健康信息包含服务名称", () => {
 });
 
 test("健康接口返回 JSON", async () => {
-  const server = createApp();
+  const server = createDefaultApp();
   await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
   try {
     const address = server.address();
